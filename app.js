@@ -27,6 +27,7 @@ app.set('view engine', "ejs");
 
 //routes
 app.get('/', (req,res)=>{
+	console.log("hello from get");
 	res.render("index");
 })
 app.post('/upload',(req,res)=>{
