@@ -26,7 +26,7 @@ const upload = multer({storage: storage}).single('avatar');
 app.set('view engine', "ejs");
 
 //routes
-app.get('/', (req,res)=>{
+app.get("/", (req,res)=>{
 	console.log("hello from get");
 	res.render("index");
 })
@@ -59,7 +59,7 @@ app.get('/download', (req,res) =>{
 })
 
 
-const PORT = 5000 || process.env.PORT;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=> console.log(`hey I am running on port ${PORT}`));
 
 
