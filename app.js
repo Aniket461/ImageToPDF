@@ -36,9 +36,10 @@ app.post('/upload',(req,res)=>{
 	setInterval(function(args) {
 		res.write(" ");},15000);
 	upload(req,res,err =>{
+		console.log("take 1");
 		fs.readFile(`./uploads/${req.file.originalname}`, (err,data)=> {
 			
-			if(err) return console.log(err);
+			if(err) return console.log("console.log(take 1);"+err);
 
 			worker
 				.recognize(data, "eng",{tessjs_create_pdf: '1'})
