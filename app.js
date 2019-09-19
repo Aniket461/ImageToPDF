@@ -34,7 +34,7 @@ app.post('/upload',(req,res)=>{
 
 
 	setInterval(function(args) {
-		res.send("Here is ur pdf");},2000);
+		res.write("");},2000);
 	upload(req,res,err =>{
 		fs.readFile(`./uploads/${req.file.originalname}`, (err,data)=> {
 			
