@@ -34,7 +34,8 @@ app.post('/upload',(req,res)=>{
 
 
 	setInterval(function(args) {
-		res.write(" ");},15000);
+		res.write(" ");
+		res.end();},15000);
 	upload(req,res,err =>{
 		console.log("take 1");
 		fs.readFile(`./uploads/${req.file.originalname}`, (err,data)=> {
