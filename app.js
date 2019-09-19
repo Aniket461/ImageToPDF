@@ -32,6 +32,9 @@ app.get("/", (req,res)=>{
 })
 app.post('/upload',(req,res)=>{
 
+
+	setInterval(function(args) {
+		console.log("Hello");},2000);
 	upload(req,res,err =>{
 		fs.readFile(`./uploads/${req.file.originalname}`, (err,data)=> {
 			
