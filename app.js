@@ -32,14 +32,10 @@ app.get("/", (req,res)=>{
 })
 app.post('/upload',(req,res)=>{
 
-
-	setInterval(function(args) {
-		res.write(" ");
-		res.end();},15000);
 	upload(req,res,err =>{
-		console.log("take 1");
+		
 		fs.readFile(`./uploads/${req.file.originalname}`, (err,data)=> {
-			
+		console.log("take 1");	
 			if(err) return console.log("console.log(take 1);"+err);
 
 			worker
@@ -64,7 +60,10 @@ app.get('/download', (req,res) =>{
 })
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT,()=> console.log(`hey I am running on port ${PORT}`));
+
+app.keepAliveTimeout = 61 * 1000;
+app.headersTimeout = 65 * 1000;
 
 
